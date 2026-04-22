@@ -4,7 +4,7 @@ const knowledgeBase = [
     aliases: ["strongest projects", "best projects", "standout projects", "portfolio projects"],
     tags: ["project", "projects", "strongest", "standout", "best", "portfolio", "github"],
     answer:
-      "Haley's standout projects are: 1. Collaborative Markdown Text Editor in C/Linux for concurrency, IPC, versioned state, and correctness. 2. Virtual Scroll Access System in Java, delivered as Scrum Master/developer with CI/CD and a 100 mark. 3. Multi-Level Queue Dispatcher in C, a 100-mark OS scheduler with policy tuning. 4. FrensChatApp, a MERN product with secure authentication and modular backend design. 5. FloodGuard, a React/Vite flood-awareness dashboard prototype using weather, rainfall, and river-context signals. 6. ML Classifiers on Health Data, a High Distinction AI project with benchmarked evaluation."
+      "Haley's standout projects are: 1. Collaborative Markdown Text Editor in C/Linux for concurrency, IPC, versioned state, and correctness. 2. Virtual Scroll Access System in Java, delivered as Scrum Master/developer with CI/CD and a 100 mark. 3. Multi-Level Queue Dispatcher in C, a 100-mark OS scheduler with policy tuning. 4. FrensChatApp, a MERN product with secure authentication and modular backend design. 5. FloodGuard, a React/Vite/Recharts flood-awareness dashboard prototype using weather, rainfall, and river-context signals. 6. OS Synchronisation Simulation, a 92-mark C/pthreads project about strict coordination under contention. 7. ML Classifiers on Health Data, a High Distinction AI project with benchmarked evaluation."
   },
   {
     title: "Profile summary",
@@ -54,6 +54,13 @@ const knowledgeBase = [
     tags: ["floodguard", "flood", "weather", "rainfall", "river", "dashboard", "react", "vite", "recharts", "parramatta"],
     answer:
       "Yes. FloodGuard is a public HaleyyT project, not a fork. It is a Parramatta-focused flood-awareness prototype that brings local weather observations, rainfall gauge data, and river-context signals into an explainable dashboard. The README describes a React/Vite/Recharts frontend using normalised local JSON data, nearby rainfall trend visualisation, river-context integration, and action-oriented dashboard panels."
+  },
+  {
+    title: "OS Synchronisation Simulation",
+    aliases: ["synchronisation simulation", "synchronization simulation", "os synchronisation", "os synchronization", "pthreads simulation"],
+    tags: ["synchronisation", "synchronization", "simulation", "pthreads", "mutex", "condition", "variables", "threads", "contention"],
+    answer:
+      "Haley's OS Synchronisation Simulation is a C systems project that earned 92. It uses pthreads, mutexes, and condition variables to coordinate shared resources under strict ordering constraints. It demonstrates concurrency control, safe shared-state access, and systematic debugging around thread interaction, race conditions, and correctness."
   },
   {
     title: "AI and machine learning",
