@@ -74,7 +74,6 @@ const chatForm = document.querySelector("#chatForm");
 const chatInput = document.querySelector("#chatInput");
 const chatbot = document.querySelector("#chatbot");
 const chatToggle = document.querySelector("#chatToggle");
-const ufo = document.querySelector("#ufo");
 const promptButtons = document.querySelectorAll("[data-question]");
 
 function tokenize(text) {
@@ -145,24 +144,4 @@ promptButtons.forEach((button) => {
     submitQuestion(button.dataset.question);
     chatInput.focus();
   });
-});
-
-window.addEventListener("pointermove", (event) => {
-  if (!ufo) return;
-
-  const rect = ufo.getBoundingClientRect();
-  const centerX = rect.left + rect.width / 2;
-  const centerY = rect.top + rect.height / 2;
-  const distance = Math.hypot(event.clientX - centerX, event.clientY - centerY);
-
-  if (distance > 260) {
-    ufo.style.setProperty("--ufo-x", "0deg");
-    ufo.style.setProperty("--ufo-y", "0deg");
-    return;
-  }
-
-  const rotateY = ((event.clientX - centerX) / rect.width) * 10;
-  const rotateX = -((event.clientY - centerY) / rect.height) * 8;
-  ufo.style.setProperty("--ufo-x", `${rotateX.toFixed(2)}deg`);
-  ufo.style.setProperty("--ufo-y", `${rotateY.toFixed(2)}deg`);
 });
