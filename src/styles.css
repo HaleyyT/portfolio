@@ -304,6 +304,12 @@ h3 {
   line-height: 1.05;
 }
 
+.signal span.compact-stack {
+  max-width: 100%;
+  font-size: clamp(0.92rem, 1.45vw, 1.28rem);
+  line-height: 1.25;
+}
+
 .signal p,
 .project-card p,
 .skills-grid p,
@@ -349,6 +355,12 @@ footer p {
 .section-heading {
   max-width: 760px;
   margin-bottom: 30px;
+}
+
+.single-line-title {
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(1.85rem, 3.6vw, 3.8rem);
 }
 
 .project-grid {
@@ -625,6 +637,10 @@ footer {
 
   .section {
     padding: 58px 0;
+  }
+
+  .single-line-title {
+    white-space: normal;
   }
 
   .chatbot.docked {
