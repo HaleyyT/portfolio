@@ -18,7 +18,14 @@
   </head>
   <body>
     <div class="night-sky" aria-hidden="true">
-      <span class="moon"></span>
+      <span class="ufo" id="ufo" aria-hidden="true">
+        <span class="ufo-dome"></span>
+        <span class="ufo-rim"></span>
+        <span class="ufo-light light-a"></span>
+        <span class="ufo-light light-b"></span>
+        <span class="ufo-light light-c"></span>
+        <span class="ufo-beam"></span>
+      </span>
       <span class="star star-a"></span>
       <span class="star star-b"></span>
       <span class="star star-c"></span>
@@ -62,8 +69,8 @@
 
         <aside class="hero-panel" aria-label="Profile highlights">
           <div class="signal">
-            <span>100</span>
-            <p>Marks on OS scheduler, Java VSAS, and Connect-4 AI projects</p>
+            <span>Full marks</span>
+            <p>On OS scheduler, Java VSAS, and Connect-4 AI projects</p>
           </div>
           <div class="signal">
             <span>HD</span>
@@ -100,7 +107,7 @@
       <section id="projects" class="section">
         <div class="section-heading">
           <p class="section-kicker">Selected Projects</p>
-          <h2>Evidence over buzzwords</h2>
+          <h2>Projects that prove the craft</h2>
         </div>
         <div class="project-grid">
           <article class="project-card featured">
@@ -168,7 +175,7 @@
       <section id="skills" class="section skills-section">
         <div class="section-heading">
           <p class="section-kicker">Technical Strength</p>
-          <h2>Built for internships that need range and rigor</h2>
+          <h2>Range across systems, product, and AI</h2>
         </div>
         <div class="skills-grid">
           <article>
@@ -203,28 +210,15 @@
           <p class="section-kicker">Profile Chatbot</p>
           <h2>Ask about Haley’s fit</h2>
           <p>
-            This chatbot answers from the resume and GitHub-backed project notes in this site. Try asking about systems
-            experience, AI/ML, best projects, teamwork, graduation date, or technical stack.
+            A fixed profile assistant is available in the bottom-right corner. It answers from Haley's resume and
+            GitHub-backed project notes.
           </p>
-          <div class="prompt-chips" aria-label="Example questions">
-            <button data-question="What are Haley's strongest projects?">Strongest projects</button>
-            <button data-question="Summarise Haley's systems programming experience.">Systems experience</button>
-            <button data-question="What AI and data science work has Haley done?">AI and data</button>
-            <button data-question="Why should a recruiter interview Haley?">Recruiter pitch</button>
-          </div>
         </div>
-
-        <div class="chatbot" aria-label="Ask Haley's profile chatbot">
-          <div class="chat-window" id="chatWindow">
-            <div class="message bot">
-              Hi, I am Haley's profile assistant. Ask me about her resumes, projects, strengths, skills, or internship fit.
-            </div>
-          </div>
-          <form class="chat-form" id="chatForm">
-            <label class="sr-only" for="chatInput">Ask a recruiter question</label>
-            <input id="chatInput" type="text" placeholder="Ask about projects, skills, resume, fit..." autocomplete="off" />
-            <button type="submit">Ask</button>
-          </form>
+        <div class="prompt-chips" aria-label="Example questions">
+          <button data-question="What are Haley's strongest projects?">Strongest projects</button>
+          <button data-question="Summarise Haley's systems programming experience.">Systems experience</button>
+          <button data-question="What AI and data science work has Haley done?">AI and data</button>
+          <button data-question="Why should a recruiter interview Haley?">Recruiter pitch</button>
         </div>
       </section>
 
@@ -245,6 +239,27 @@
     <footer>
       <p>Designed as a glowing night-sky portfolio for Haley Tran · Built for Vercel</p>
     </footer>
+
+    <aside class="chatbot docked" id="chatbot" aria-label="Ask Haley's profile chatbot">
+      <button class="chat-launcher" id="chatToggle" type="button" aria-expanded="true" aria-controls="chatPanel">
+        <span class="chat-orbit" aria-hidden="true">
+          <span></span>
+        </span>
+        <span>Ask / summarise about Haley</span>
+      </button>
+      <div class="chat-panel" id="chatPanel">
+        <div class="chat-window" id="chatWindow">
+          <div class="message bot">
+            Hi, I am Haley's profile assistant. Ask me about her resumes, projects, strengths, skills, or internship fit.
+          </div>
+        </div>
+        <form class="chat-form" id="chatForm">
+          <label class="sr-only" for="chatInput">Ask a recruiter question</label>
+          <input id="chatInput" type="text" placeholder="Ask about projects, skills, resume, fit..." autocomplete="off" />
+          <button type="submit">Ask</button>
+        </form>
+      </div>
+    </aside>
 
     <script src="./src/main.js" type="module"></script>
   </body>
