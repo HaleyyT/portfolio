@@ -105,10 +105,11 @@
         <div class="project-grid">
           <article class="project-card featured">
             <div class="project-meta"><span>C · Linux · IPC</span><span>Systems</span></div>
-            <h3>Collaborative Markdown Text Editor</h3>
+            <h3>Concurrent Multi-Client State Synchronisation Editor</h3>
             <p>
-              Concurrent multi-client editor with a server-owned document state, FIFO-based IPC, versioned updates,
-              serialized command processing, role-based access, and stress-tested correctness.
+              Built a C/Linux client-server backend that keeps shared document state correct across concurrent clients.
+              Used signal-based handshakes, dedicated FIFO channels, versioned updates, optimistic concurrency control,
+              and role-based write permissions to prevent stale writes, lost updates, and unsafe multi-user edits.
             </p>
             <a href="https://github.com/HaleyyT/text-editor" target="_blank" rel="noreferrer">Open GitHub</a>
           </article>

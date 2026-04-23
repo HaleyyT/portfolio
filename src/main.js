@@ -4,7 +4,7 @@ const knowledgeBase = [
     aliases: ["strongest projects", "best projects", "standout projects", "portfolio projects"],
     tags: ["project", "projects", "strongest", "standout", "best", "portfolio", "github"],
     answer:
-      "Haley's standout projects are: 1. Collaborative Markdown Text Editor in C/Linux for concurrency, IPC, versioned state, and correctness. 2. Virtual Scroll Access System in Java, delivered as Scrum Master/developer with CI/CD and a 100 mark. 3. Multi-Level Queue Dispatcher in C, a 100-mark OS scheduler with policy tuning. 4. FrensChatApp, a MERN product with secure authentication and modular backend design. 5. FloodGuard, a React/Vite/Recharts flood-awareness dashboard prototype using weather, rainfall, and river-context signals. 6. OS Synchronisation Simulation, a 92-mark C/pthreads project about strict coordination under contention. 7. ML Classifiers on Health Data, a High Distinction AI project with benchmarked evaluation."
+      "Haley's standout projects are: 1. Concurrent Multi-Client State Synchronisation Editor in C/Linux for concurrency, IPC, versioned state, optimistic concurrency control, role-based access, and correctness under contention. 2. Virtual Scroll Access System in Java, delivered as Scrum Master/developer with CI/CD and a 100 mark. 3. Multi-Level Queue Dispatcher in C, a 100-mark OS scheduler with policy tuning. 4. FrensChatApp, a MERN product with secure authentication and modular backend design. 5. FloodGuard, a React/Vite/Recharts flood-awareness dashboard prototype using weather, rainfall, and river-context signals. 6. OS Synchronisation Simulation, a 92-mark C/pthreads project about strict coordination under contention. 7. ML Classifiers on Health Data, a High Distinction AI project with benchmarked evaluation."
   },
   {
     title: "Profile summary",
@@ -21,11 +21,11 @@ const knowledgeBase = [
       "Haley has substantial systems experience in C/Linux: a concurrent multi-client text editor using FIFOs, signal-based handshakes, pthread session handling, versioned shared state, optimistic concurrency control, role-based access control, and ASan/concurrency stress testing. She also built an OS synchronization simulation with pthreads, mutexes, condition variables, and strict ordering constraints, earning 92."
   },
   {
-    title: "Collaborative Markdown Text Editor",
-    aliases: ["text editor", "markdown editor", "collaborative editor", "collaborative markdown text editor"],
+    title: "Concurrent Multi-Client State Synchronisation Editor",
+    aliases: ["text editor", "markdown editor", "collaborative editor", "collaborative markdown text editor", "concurrent multi client", "state synchronisation editor", "state synchronization editor"],
     tags: ["text", "editor", "markdown", "collaborative"],
     answer:
-      "The collaborative Markdown text editor is one of Haley's strongest systems projects. It uses a client-server architecture in C, server-owned document state, FIFO-based IPC, versioned document updates, serialized command processing, validation/error handling, role-based write permissions, and stress testing for correctness under concurrent access."
+      "The Concurrent Multi-Client State Synchronisation Editor is one of Haley's strongest systems projects. She built a C/Linux client-server backend that protects shared document state across concurrent clients using signal-based handshakes, dedicated FIFO IPC channels, versioned updates, optimistic concurrency control, serialized mutation logic, and role-based write permissions. The impact is reliability: stale writes are rejected, lost updates are prevented, unsafe multi-user edits are blocked, and ASan plus concurrency stress testing validate correctness under contention."
   },
   {
     title: "Multi-Level Queue Dispatcher",
