@@ -226,3 +226,13 @@ promptButtons.forEach((button) => {
     chatInput.focus();
   });
 });
+
+document.querySelectorAll(".project-card, .skills-grid article, .snapshot-list article, .signal").forEach((card) => {
+  card.addEventListener("pointermove", (event) => {
+    const rect = card.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    card.style.setProperty("--glow-x", `${x.toFixed(1)}%`);
+    card.style.setProperty("--glow-y", `${y.toFixed(1)}%`);
+  });
+});
