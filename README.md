@@ -1,6 +1,6 @@
 # Haley Tran Portfolio
 
-Recruiter-focused portfolio for Ly My Hoa (Haley) Tran, built as a static Vercel-ready site with a deep navy night-sky theme, animated fireflies, project highlights, resume links, and a local profile chatbot.
+Recruiter-focused portfolio for Ly My Hoa (Haley) Tran, built as a static Vercel-ready site with a deep navy night-sky theme, animated fireflies, project highlights, resume links, and a local profile chatbot. 
 
 ## Run locally
 
