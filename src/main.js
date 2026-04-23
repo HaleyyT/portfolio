@@ -235,4 +235,14 @@ document.querySelectorAll(".project-card, .skills-grid article, .snapshot-list a
     card.style.setProperty("--glow-x", `${x.toFixed(1)}%`);
     card.style.setProperty("--glow-y", `${y.toFixed(1)}%`);
   });
+
+  card.addEventListener("pointerdown", (event) => {
+    const rect = card.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    card.style.setProperty("--glow-x", `${x.toFixed(1)}%`);
+    card.style.setProperty("--glow-y", `${y.toFixed(1)}%`);
+    card.classList.add("is-lit");
+    window.setTimeout(() => card.classList.remove("is-lit"), 900);
+  });
 });

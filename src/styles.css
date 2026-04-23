@@ -13,10 +13,11 @@
   --cyan: #9bdcff;
   --rose: #f0a9c7;
   --shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
-  --glass: rgba(255, 255, 255, 0.055);
-  --glass-strong: rgba(255, 255, 255, 0.085);
-  --glass-line: rgba(255, 255, 255, 0.14);
-  --moonlight: rgba(255, 245, 200, 0.3);
+  --glass: rgba(6, 20, 38, 0.72);
+  --glass-strong: rgba(11, 35, 63, 0.82);
+  --glass-line: rgba(150, 190, 255, 0.22);
+  --moonlight: rgba(255, 224, 128, 0.22);
+  --turquoise-glow: rgba(125, 255, 232, 0.24);
 }
 
 * {
@@ -84,13 +85,13 @@ a {
   width: clamp(210px, 26vw, 390px);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle at 36% 32%, #fff8c9, #eacb77 58%, rgba(234, 203, 119, 0.28) 68%, rgba(234, 203, 119, 0.04) 72%);
+  background: radial-gradient(circle at 36% 32%, #ffeaa0, #d9b85c 58%, rgba(201, 156, 55, 0.26) 68%, rgba(201, 156, 55, 0.04) 72%);
   box-shadow:
-    inset -36px -30px 58px rgba(91, 63, 25, 0.32),
-    inset 24px 20px 38px rgba(255, 255, 255, 0.22),
-    0 0 80px 20px var(--moonlight),
-    0 0 150px rgba(254, 229, 138, 0.2);
-  opacity: 0.92;
+    inset -36px -30px 58px rgba(86, 59, 19, 0.36),
+    inset 22px 18px 34px rgba(255, 242, 178, 0.18),
+    0 0 56px 12px var(--moonlight),
+    0 0 110px rgba(255, 205, 91, 0.14);
+  opacity: 0.84;
 }
 
 .moon::before {
@@ -99,8 +100,8 @@ a {
   inset: -26%;
   border-radius: 50%;
   background:
-    radial-gradient(circle, rgba(255, 245, 200, 0.34), transparent 58%),
-    radial-gradient(circle, rgba(157, 245, 213, 0.08), transparent 72%);
+    radial-gradient(circle, rgba(255, 224, 128, 0.24), transparent 58%),
+    radial-gradient(circle, rgba(157, 245, 213, 0.055), transparent 72%);
   z-index: -1;
 }
 
@@ -321,8 +322,7 @@ h3 {
 .chatbot {
   border: 1px solid var(--glass-line);
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 36%),
-    linear-gradient(180deg, var(--glass-strong), var(--glass));
+    linear-gradient(180deg, var(--panel-strong), var(--panel));
   box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px) saturate(130%);
 }
@@ -339,8 +339,8 @@ h3 {
 .signal {
   padding: 18px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.055);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid transparent;
 }
 
 .signal span {
@@ -438,7 +438,7 @@ footer p {
   content: "";
   position: absolute;
   inset: -1px;
-  background: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 0%), rgba(254, 229, 138, 0.16), transparent 34%);
+  background: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 0%), var(--turquoise-glow), transparent 34%);
   opacity: 0;
   transition: opacity 220ms ease;
   pointer-events: none;
@@ -447,23 +447,44 @@ footer p {
 .project-card:hover,
 .skills-grid article:hover,
 .snapshot-list article:hover,
-.signal:hover {
+.signal:hover,
+.project-card:focus-within,
+.skills-grid article:focus-within,
+.snapshot-list article:focus-within,
+.signal:focus-within {
   transform: translateY(-3px);
-  border-color: rgba(254, 229, 138, 0.24);
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.11), transparent 36%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border-color: rgba(125, 255, 232, 0.32);
+  background: linear-gradient(180deg, var(--panel-strong), var(--panel));
   box-shadow:
     0 24px 70px rgba(0, 0, 0, 0.42),
-    0 0 34px rgba(254, 229, 138, 0.12),
+    0 0 34px rgba(125, 255, 232, 0.16),
     inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 .project-card:hover::before,
 .skills-grid article:hover::before,
 .snapshot-list article:hover::before,
-.signal:hover::before {
+.signal:hover::before,
+.project-card:focus-within::before,
+.skills-grid article:focus-within::before,
+.snapshot-list article:focus-within::before,
+.signal:focus-within::before,
+.project-card.is-lit::before,
+.skills-grid article.is-lit::before,
+.snapshot-list article.is-lit::before,
+.signal.is-lit::before {
   opacity: 1;
+}
+
+.project-card.is-lit,
+.skills-grid article.is-lit,
+.snapshot-list article.is-lit,
+.signal.is-lit {
+  border-color: rgba(125, 255, 232, 0.44);
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.42),
+    0 0 42px rgba(125, 255, 232, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 .project-card.featured {
