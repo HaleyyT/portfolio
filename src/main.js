@@ -11,7 +11,7 @@ const knowledgeBase = [
     aliases: ["tell me about haley", "who is haley", "recruiter summary", "candidate summary"],
     tags: ["summary", "profile", "about", "who", "fit", "recruiter", "interview", "resume"],
     answer:
-      "Haley Tran is a University of Sydney Computer Science and Data Science student graduating in December 2026. Her profile is strongest where rigorous engineering meets practical delivery: C/Linux systems, Java team projects, MERN full-stack work, and AI/data science evaluation. A recruiter should notice her repeated 100-mark projects, High Distinction ML work, and evidence of debugging, testing, and teamwork."
+      "Ly My Hoa (Haley) Tran is a University of Sydney Computer Science and Data Science student. Her profile is strongest where system/backend engineering meets practical delivery: C/Linux systems, Java team projects, MERN full-stack work, and AI/data science evaluation. A recruiter should notice her effort in the repeated 100-mark projects, High Distinction ML work, and evidence of building, debugging, testing, and teamwork."
   },
   {
     title: "Systems programming",
