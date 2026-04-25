@@ -4,7 +4,7 @@ const knowledgeBase = [
     aliases: ["strongest projects", "best projects", "standout projects", "portfolio projects"],
     tags: ["project", "projects", "strongest", "standout", "best", "portfolio", "github"],
     answer:
-      "Haley's standout projects are: 1. Concurrent Multi-Client State Synchronisation Editor in C/Linux for concurrency, IPC, versioned state, optimistic concurrency control, role-based access, and correctness under contention. 2. Virtual Scroll Access System in Java, delivered as Scrum Master/developer with CI/CD and a 100 mark. 3. Multi-Level Queue Dispatcher in C, a 100-mark OS scheduler with policy tuning. 4. FrensChatApp, a MERN product with secure authentication and modular backend design. 5. FloodGuard, a React/Vite/Recharts flood-awareness dashboard prototype using weather, rainfall, and river-context signals. 6. OS Synchronisation Simulation, a 92-mark C/pthreads project about strict coordination under contention. 7. ML Classifiers on Health Data, a High Distinction AI project with benchmarked evaluation."
+      "Haley's standout projects are: 1. Concurrent Multi-Client State Synchronisation Editor in C/Linux for concurrency, IPC, versioned state, optimistic concurrency control, role-based access, and correctness under contention. 2. Virtual Scroll Access System in Java, delivered as Scrum Master/developer with CI/CD and received 100 mark. 3. Multi-Level Queue Dispatcher in C, a 100-mark OS scheduler with policy tuning. 4. FrensChatApp, a MERN real-time product with secure authentication and modular backend design. 5. FloodGuard, a React/Vite/Recharts flood-awareness dashboard prototype using weather, rainfall, and river-context signals. 6. OS Synchronisation Simulation, a 92-mark C/pthreads project about strict coordination under contention. 7. ML Classifiers on Health Data, a High Distinction AI project with benchmarked evaluation."
   },
   {
     title: "Profile summary",
@@ -18,7 +18,7 @@ const knowledgeBase = [
     aliases: ["systems programming", "c linux", "concurrency", "low level"],
     tags: ["systems", "c", "linux", "unix", "concurrency", "ipc", "fifo", "thread", "mutex", "operating"],
     answer:
-      "Haley has substantial systems experience in C/Linux: a concurrent multi-client text editor using FIFOs, signal-based handshakes, pthread session handling, versioned shared state, optimistic concurrency control, role-based access control, and ASan/concurrency stress testing. She also built an OS synchronization simulation with pthreads, mutexes, condition variables, and strict ordering constraints, earning 92."
+      "Haley has substantial systems experience in C/Linux: a concurrent multi-client text editor using FIFOs, signal-based handshakes, pthread session handling, versioned shared state, optimistic concurrency control, role-based access control, and ASan/concurrency stress testing. She also received 100 marks for the OS scheduling projects where she improved the average metrics using FCFS, Round Robin and starvation prevention. Another project is an OS synchronisation simulation with pthreads, mutexes, condition variables, and strict ordering constraints, earning 92."
   },
   {
     title: "Concurrent Multi-Client State Synchronisation Editor",
@@ -74,7 +74,7 @@ const knowledgeBase = [
     aliases: ["regression", "body fat", "body fat percentage", "data analytics"],
     tags: ["data", "regression", "r", "body", "fat", "statistics"],
     answer:
-      "Haley collaborated on a High Distinction regression project predicting body fat percentage from physiological measurements for 252 subjects. The team used forward, backward, and exhaustive model selection, validated assumptions such as linearity, multicollinearity, and normality, ran 10-fold cross-validation, and achieved about R-squared 0.74."
+      "Haley collaborated on a High Distinction regression project predicting body fat percentage from physiological measurements for 252 subjects. The team used forward, backward, and exhaustive model selection, validated assumptions such as linearity, multicollinearity, and normality, ran 10-fold cross-validation, and achieved about R-squared 0.74.  She also implemented end-to-end Naive Bayes and Decision Tree classifiers with preprocessing, stratified k-fold evaluation, error analysis, and a custom decision-tree variant which outperformed Weka's implementation, earning High Distinction for the analysis"
   },
   {
     title: "Connect-4 AI",
