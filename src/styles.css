@@ -550,6 +550,10 @@ footer p {
   border-radius: 8px;
   padding: 12px 14px;
   color: var(--ink);
+  font-size: 0.94rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
 }
 
 .message.bot {
