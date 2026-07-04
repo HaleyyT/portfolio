@@ -371,9 +371,11 @@ footer p {
 .project-case-study-cta {
   position: relative;
   align-items: center;
+  justify-content: center;
   min-height: 58px;
-  margin-top: 26px;
-  padding: 15px 24px 15px 86px;
+  margin-top: 38px;
+  margin-left: 0;
+  padding: 15px 30px 15px 104px;
   overflow: visible;
   border: 1px solid rgba(254, 229, 138, 0.72);
   border-radius: 999px;
@@ -381,11 +383,12 @@ footer p {
     radial-gradient(circle at 24% 18%, rgba(255, 255, 255, 0.72), transparent 0.55rem),
     linear-gradient(135deg, #fff2a8 0%, #fee58a 46%, #9df5d5 100%);
   box-shadow:
-    0 0 0 1px rgba(254, 229, 138, 0.12),
-    0 14px 32px rgba(254, 229, 138, 0.2),
-    0 0 52px rgba(157, 245, 213, 0.18);
+    0 0 0 1px rgba(254, 229, 138, 0.1),
+    0 12px 24px rgba(254, 229, 138, 0.13),
+    0 0 34px rgba(157, 245, 213, 0.14);
   color: #061426;
   font-size: clamp(1rem, 1.7vw, 1.16rem);
+  line-height: 1.2;
   isolation: isolate;
   transition:
     transform 180ms ease,
@@ -399,9 +402,9 @@ footer p {
   inset: -7px;
   z-index: -1;
   border-radius: inherit;
-  background: linear-gradient(90deg, rgba(254, 229, 138, 0.28), rgba(157, 245, 213, 0.26));
-  filter: blur(14px);
-  opacity: 0.72;
+  background: linear-gradient(90deg, rgba(254, 229, 138, 0.18), rgba(157, 245, 213, 0.2));
+  filter: blur(12px);
+  opacity: 0.52;
 }
 
 .project-case-study-cta:hover,
@@ -410,8 +413,8 @@ footer p {
   filter: saturate(1.08);
   box-shadow:
     0 0 0 1px rgba(254, 229, 138, 0.26),
-    0 18px 42px rgba(254, 229, 138, 0.28),
-    0 0 70px rgba(157, 245, 213, 0.26);
+    0 16px 34px rgba(254, 229, 138, 0.2),
+    0 0 52px rgba(157, 245, 213, 0.2);
 }
 
 .project-case-study-cta:focus-visible {
@@ -421,10 +424,10 @@ footer p {
 
 .flight-arc {
   position: absolute;
-  left: -50px;
-  top: -48px;
-  width: 170px;
-  height: 94px;
+  left: -78px;
+  top: -34px;
+  width: 188px;
+  height: 104px;
   pointer-events: none;
 }
 
@@ -437,11 +440,11 @@ footer p {
 
 .flight-path {
   fill: none;
-  stroke: rgba(155, 220, 255, 0.88);
-  stroke-width: 5;
   stroke-linecap: round;
   stroke-dasharray: 11 12;
   animation: flightDash 3.6s linear infinite;
+  stroke: #55b9f6;
+  stroke-width: 5;
 }
 
 .paper-plane {
@@ -1015,16 +1018,17 @@ footer {
 
   .project-case-study-cta {
     width: 100%;
+    margin-left: 0;
     justify-content: center;
-    padding: 15px 18px 15px 76px;
+    padding: 15px 18px 15px 82px;
     text-align: center;
   }
 
   .flight-arc {
-    left: -12px;
-    top: -44px;
-    width: 112px;
-    height: 76px;
+    left: -16px;
+    top: -32px;
+    width: 120px;
+    height: 78px;
   }
 
   .single-line-title {
