@@ -357,6 +357,11 @@ footer p {
   margin-bottom: 30px;
 }
 
+.project-section-heading .section-kicker,
+.project-section-heading .single-line-title {
+  transform: translateY(20px);
+}
+
 .section-link,
 .text-link {
   color: var(--gold);
@@ -425,7 +430,7 @@ footer p {
 .flight-arc {
   position: absolute;
   left: -78px;
-  top: -34px;
+  top: -44px;
   width: 188px;
   height: 104px;
   pointer-events: none;
@@ -1026,7 +1031,7 @@ footer {
 
   .flight-arc {
     left: -16px;
-    top: -32px;
+    top: -38px;
     width: 120px;
     height: 78px;
   }
