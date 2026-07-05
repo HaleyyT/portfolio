@@ -14,7 +14,7 @@ const resumeData = {
   resumes: [
     {
       label: "Software engineering / backend resume",
-      path: "/resumes/SWE_HaleyTran_Backend.pdf",
+      path: "/resumes/HaleyTran_Backend-1-page.pdf",
       focus: "backend systems, concurrency, Java delivery, MERN APIs, OS projects, and systems coursework"
     },
     {
