@@ -665,7 +665,7 @@ function setupSnapshotCarousel() {
   function updateSnapshotPosition() {
     const visible = visibleSnapshotCount();
     const maxIndex = Math.max(0, cards.length - visible);
-    index = Math.min(index, maxIndex);
+    index = ((index % (maxIndex + 1)) + (maxIndex + 1)) % (maxIndex + 1);
     const cardWidth = cards[0]?.getBoundingClientRect().width || 0;
     const styles = window.getComputedStyle(snapshotTrack);
     const gap = Number.parseFloat(styles.columnGap || styles.gap || "0") || 0;
@@ -673,14 +673,12 @@ function setupSnapshotCarousel() {
   }
 
   snapshotPrev.addEventListener("click", () => {
-    const maxIndex = Math.max(0, cards.length - visibleSnapshotCount());
-    index = index <= 0 ? maxIndex : index - 1;
+    index -= 1;
     updateSnapshotPosition();
   });
 
   snapshotNext.addEventListener("click", () => {
-    const maxIndex = Math.max(0, cards.length - visibleSnapshotCount());
-    index = index >= maxIndex ? 0 : index + 1;
+    index += 1;
     updateSnapshotPosition();
   });
 
