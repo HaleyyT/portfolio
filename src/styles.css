@@ -320,6 +320,17 @@ footer p {
   color: var(--muted);
 }
 
+.signal p a {
+  color: var(--gold);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.signal p a:hover,
+.signal p a:focus-visible {
+  text-decoration: underline;
+}
+
 .section {
   padding: 84px 0;
 }
