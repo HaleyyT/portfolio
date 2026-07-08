@@ -377,14 +377,11 @@ footer p {
   position: absolute;
   top: 50%;
   z-index: 4;
-  width: 30px;
-  height: 48px;
-  border: 1px solid rgba(255, 255, 255, 0.82);
-  border-radius: 10px;
-  background: rgba(247, 251, 255, 0.96);
-  box-shadow:
-    0 0 20px rgba(247, 251, 255, 0.34),
-    0 12px 26px rgba(0, 0, 0, 0.24);
+  width: 29px;
+  height: 36px;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
   transform: translateY(-50%);
 }
 
@@ -393,34 +390,44 @@ footer p {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 12px;
-  height: 12px;
-  border-top: 4px solid rgba(6, 20, 38, 0.76);
-  border-left: 4px solid rgba(6, 20, 38, 0.76);
+  width: 24px;
+  height: 32px;
+  background: rgba(247, 251, 255, 0.98);
+  border-radius: 9px;
+  filter:
+    drop-shadow(0 0 20px rgba(247, 251, 255, 0.72))
+    drop-shadow(0 8px 14px rgba(0, 0, 0, 0.2));
 }
 
 .snapshot-nav.previous {
-  left: -30px;
+  left: 30px;
 }
 
 .snapshot-nav.previous::before {
-  transform: translate(-38%, -50%) rotate(-45deg);
+  clip-path: polygon(12% 50%, 92% 8%, 92% 92%);
+  transform: translate(-50%, -50%);
 }
 
 .snapshot-nav.next {
-  right: -30px;
+  right: 30px;
 }
 
 .snapshot-nav.next::before {
-  transform: translate(-62%, -50%) rotate(135deg);
+  clip-path: polygon(88% 50%, 8% 8%, 8% 92%);
+  transform: translate(-50%, -50%);
 }
 
 .snapshot-nav:hover,
 .snapshot-nav:focus-visible {
+  background: transparent;
+}
+
+.snapshot-nav:hover::before,
+.snapshot-nav:focus-visible::before {
   background: #ffffff;
-  box-shadow:
-    0 0 26px rgba(247, 251, 255, 0.48),
-    0 14px 34px rgba(157, 245, 213, 0.18);
+  filter:
+    drop-shadow(0 0 28px rgba(247, 251, 255, 0.86))
+    drop-shadow(0 10px 18px rgba(157, 245, 213, 0.22));
 }
 
 .technical-depth-strip {
@@ -471,19 +478,19 @@ footer p {
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  border: 1px solid rgba(255, 231, 111, 0.28);
+  border: 1px solid rgba(255, 239, 142, 0.28);
   border-radius: 999px;
-  background: rgba(255, 231, 111, 0.1);
-  color: #ffed8f;
+  background: rgba(255, 239, 142, 0.085);
+  color: #fff19a;
   font-size: 0.78rem;
   font-weight: 850;
   line-height: 1.2;
   min-height: 34px;
   padding: 0 13px;
   box-shadow:
-    0 0 14px rgba(255, 231, 111, 0.2),
+    0 0 12px rgba(255, 239, 142, 0.18),
     inset 0 0 12px rgba(157, 245, 213, 0.12);
-  text-shadow: 0 0 8px rgba(255, 231, 111, 0.2);
+  text-shadow: 0 0 7px rgba(255, 239, 142, 0.18);
 }
 
 .section-heading {
@@ -1153,16 +1160,21 @@ footer {
   }
 
   .snapshot-nav {
-    width: 28px;
-    height: 42px;
+    width: 25px;
+    height: 34px;
+  }
+
+  .snapshot-nav::before {
+    width: 20px;
+    height: 28px;
   }
 
   .snapshot-nav.previous {
-    left: -10px;
+    left: 8px;
   }
 
   .snapshot-nav.next {
-    right: -10px;
+    right: 8px;
   }
 
   .section {

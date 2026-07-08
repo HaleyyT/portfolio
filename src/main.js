@@ -659,17 +659,31 @@ function visibleSnapshotCount() {
 function setupSnapshotCarousel() {
   if (!snapshotTrack || !snapshotPrev || !snapshotNext) return;
 
-  const cards = Array.from(snapshotTrack.children);
-  let index = 0;
+  const originalCards = Array.from(snapshotTrack.children);
+  originalCards.forEach((card) => {
+    const beforeClone = card.cloneNode(true);
+    const afterClone = card.cloneNode(true);
+    beforeClone.setAttribute("aria-hidden", "true");
+    afterClone.setAttribute("aria-hidden", "true");
+    snapshotTrack.append(afterClone);
+    snapshotTrack.insertBefore(beforeClone, snapshotTrack.firstChild);
+  });
 
-  function updateSnapshotPosition() {
-    const visible = visibleSnapshotCount();
-    const maxIndex = Math.max(0, cards.length - visible);
-    index = ((index % (maxIndex + 1)) + (maxIndex + 1)) % (maxIndex + 1);
+  const cards = Array.from(snapshotTrack.children);
+  const originalCount = originalCards.length;
+  let index = originalCount;
+
+  function updateSnapshotPosition(animate = true) {
     const cardWidth = cards[0]?.getBoundingClientRect().width || 0;
     const styles = window.getComputedStyle(snapshotTrack);
     const gap = Number.parseFloat(styles.columnGap || styles.gap || "0") || 0;
+    snapshotTrack.style.transition = animate ? "" : "none";
     snapshotTrack.style.transform = `translateX(-${index * (cardWidth + gap)}px)`;
+    if (!animate) {
+      window.requestAnimationFrame(() => {
+        snapshotTrack.style.transition = "";
+      });
+    }
   }
 
   snapshotPrev.addEventListener("click", () => {
@@ -682,8 +696,15 @@ function setupSnapshotCarousel() {
     updateSnapshotPosition();
   });
 
-  window.addEventListener("resize", updateSnapshotPosition);
-  updateSnapshotPosition();
+  snapshotTrack.addEventListener("transitionend", () => {
+    if (index >= originalCount * 2 || index < originalCount) {
+      index = ((((index - originalCount) % originalCount) + originalCount) % originalCount) + originalCount;
+      updateSnapshotPosition(false);
+    }
+  });
+
+  window.addEventListener("resize", () => updateSnapshotPosition(false));
+  updateSnapshotPosition(false);
 }
 
 setupSnapshotCarousel();
