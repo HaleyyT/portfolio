@@ -395,7 +395,7 @@ footer p {
   background: rgba(247, 251, 255, 0.98);
   border-radius: 9px;
   filter:
-    drop-shadow(0 0 20px rgba(247, 251, 255, 0.72))
+    drop-shadow(0 0 20px rgba(247, 251, 255, 0.3))
     drop-shadow(0 8px 14px rgba(0, 0, 0, 0.2));
 }
 
@@ -426,8 +426,8 @@ footer p {
 .snapshot-nav:focus-visible::before {
   background: #ffffff;
   filter:
-    drop-shadow(0 0 28px rgba(247, 251, 255, 0.86))
-    drop-shadow(0 10px 18px rgba(157, 245, 213, 0.22));
+    drop-shadow(0 0 24px rgba(247, 251, 255, 0.42))
+    drop-shadow(0 10px 18px rgba(157, 245, 213, 0.16));
 }
 
 .technical-depth-strip {

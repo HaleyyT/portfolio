@@ -660,14 +660,20 @@ function setupSnapshotCarousel() {
   if (!snapshotTrack || !snapshotPrev || !snapshotNext) return;
 
   const originalCards = Array.from(snapshotTrack.children);
+  const beforeClones = document.createDocumentFragment();
+  const afterClones = document.createDocumentFragment();
+
   originalCards.forEach((card) => {
     const beforeClone = card.cloneNode(true);
     const afterClone = card.cloneNode(true);
     beforeClone.setAttribute("aria-hidden", "true");
     afterClone.setAttribute("aria-hidden", "true");
-    snapshotTrack.append(afterClone);
-    snapshotTrack.insertBefore(beforeClone, snapshotTrack.firstChild);
+    beforeClones.append(beforeClone);
+    afterClones.append(afterClone);
   });
+
+  snapshotTrack.prepend(beforeClones);
+  snapshotTrack.append(afterClones);
 
   const cards = Array.from(snapshotTrack.children);
   const originalCount = originalCards.length;
