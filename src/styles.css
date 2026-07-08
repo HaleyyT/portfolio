@@ -355,15 +355,10 @@ footer p {
 
 .snapshot-carousel {
   position: relative;
-  display: grid;
-  grid-template-columns: 29px minmax(0, 1fr) 29px;
-  gap: 30px;
-  align-items: center;
   min-width: 0;
 }
 
 .snapshot-viewport {
-  grid-column: 2;
   overflow: hidden;
   min-width: 0;
 }
@@ -379,13 +374,15 @@ footer p {
 }
 
 .snapshot-nav {
-  position: relative;
+  position: absolute;
+  top: 50%;
   z-index: 4;
   width: 29px;
   height: 36px;
   border: 0;
   border-radius: 14px;
   background: transparent;
+  transform: translateY(-50%);
 }
 
 .snapshot-nav::before {
@@ -403,8 +400,7 @@ footer p {
 }
 
 .snapshot-nav.previous {
-  grid-column: 1;
-  grid-row: 1;
+  left: -59px;
 }
 
 .snapshot-nav.previous::before {
@@ -413,8 +409,7 @@ footer p {
 }
 
 .snapshot-nav.next {
-  grid-column: 3;
-  grid-row: 1;
+  right: -59px;
 }
 
 .snapshot-nav.next::before {
@@ -1164,11 +1159,6 @@ footer {
     flex-basis: 100%;
   }
 
-  .snapshot-carousel {
-    grid-template-columns: 25px minmax(0, 1fr) 25px;
-    gap: 8px;
-  }
-
   .snapshot-nav {
     width: 25px;
     height: 34px;
@@ -1178,6 +1168,15 @@ footer {
     width: 20px;
     height: 28px;
   }
+
+  .snapshot-nav.previous {
+    left: 8px;
+  }
+
+  .snapshot-nav.next {
+    right: 8px;
+  }
+
   .section {
     padding: 58px 0;
   }
