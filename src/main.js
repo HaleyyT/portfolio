@@ -539,6 +539,9 @@ const chatInput = document.querySelector("#chatInput");
 const chatbot = document.querySelector("#chatbot");
 const chatToggle = document.querySelector("#chatToggle");
 const promptButtons = document.querySelectorAll("[data-question]");
+const snapshotTrack = document.querySelector("[data-snapshot-track]");
+const snapshotPrev = document.querySelector("[data-snapshot-prev]");
+const snapshotNext = document.querySelector("[data-snapshot-next]");
 
 function tokenize(text) {
   return normalizeText(text)
@@ -646,3 +649,43 @@ promptButtons.forEach((button) => {
     chatInput.focus();
   });
 });
+
+function visibleSnapshotCount() {
+  if (window.matchMedia("(max-width: 640px)").matches) return 1;
+  if (window.matchMedia("(max-width: 920px)").matches) return 2;
+  return 3;
+}
+
+function setupSnapshotCarousel() {
+  if (!snapshotTrack || !snapshotPrev || !snapshotNext) return;
+
+  const cards = Array.from(snapshotTrack.children);
+  let index = 0;
+
+  function updateSnapshotPosition() {
+    const visible = visibleSnapshotCount();
+    const maxIndex = Math.max(0, cards.length - visible);
+    index = Math.min(index, maxIndex);
+    const cardWidth = cards[0]?.getBoundingClientRect().width || 0;
+    const styles = window.getComputedStyle(snapshotTrack);
+    const gap = Number.parseFloat(styles.columnGap || styles.gap || "0") || 0;
+    snapshotTrack.style.transform = `translateX(-${index * (cardWidth + gap)}px)`;
+  }
+
+  snapshotPrev.addEventListener("click", () => {
+    const maxIndex = Math.max(0, cards.length - visibleSnapshotCount());
+    index = index <= 0 ? maxIndex : index - 1;
+    updateSnapshotPosition();
+  });
+
+  snapshotNext.addEventListener("click", () => {
+    const maxIndex = Math.max(0, cards.length - visibleSnapshotCount());
+    index = index >= maxIndex ? 0 : index + 1;
+    updateSnapshotPosition();
+  });
+
+  window.addEventListener("resize", updateSnapshotPosition);
+  updateSnapshotPosition();
+}
+
+setupSnapshotCarousel();
