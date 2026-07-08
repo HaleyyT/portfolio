@@ -650,67 +650,76 @@ promptButtons.forEach((button) => {
   });
 });
 
-function visibleSnapshotCount() {
-  if (window.matchMedia("(max-width: 640px)").matches) return 1;
-  if (window.matchMedia("(max-width: 920px)").matches) return 2;
-  return 3;
-}
-
 function setupSnapshotCarousel() {
   if (!snapshotTrack || !snapshotPrev || !snapshotNext) return;
 
-  const originalCards = Array.from(snapshotTrack.children);
-  const beforeClones = document.createDocumentFragment();
-  const afterClones = document.createDocumentFragment();
+  let isMoving = false;
+  let moveDirection = null;
+  let moveTimer = null;
 
-  originalCards.forEach((card) => {
-    const beforeClone = card.cloneNode(true);
-    const afterClone = card.cloneNode(true);
-    beforeClone.setAttribute("aria-hidden", "true");
-    afterClone.setAttribute("aria-hidden", "true");
-    beforeClones.append(beforeClone);
-    afterClones.append(afterClone);
-  });
-
-  snapshotTrack.prepend(beforeClones);
-  snapshotTrack.append(afterClones);
-
-  const cards = Array.from(snapshotTrack.children);
-  const originalCount = originalCards.length;
-  let index = originalCount;
-
-  function updateSnapshotPosition(animate = true) {
-    const cardWidth = cards[0]?.getBoundingClientRect().width || 0;
+  function getSnapshotStep() {
+    const card = snapshotTrack.firstElementChild;
+    const cardWidth = card?.getBoundingClientRect().width || 0;
     const styles = window.getComputedStyle(snapshotTrack);
     const gap = Number.parseFloat(styles.columnGap || styles.gap || "0") || 0;
+    return cardWidth + gap;
+  }
+
+  function setSnapshotPosition(offset, animate = true) {
     snapshotTrack.style.transition = animate ? "" : "none";
-    snapshotTrack.style.transform = `translateX(-${index * (cardWidth + gap)}px)`;
-    if (!animate) {
-      window.requestAnimationFrame(() => {
-        snapshotTrack.style.transition = "";
-      });
+    snapshotTrack.style.transform = `translateX(${offset}px)`;
+  }
+
+  function setSnapshotPositionInstantly(offset) {
+    snapshotTrack.style.transition = "none";
+    snapshotTrack.style.transform = `translateX(${offset}px)`;
+    snapshotTrack.offsetHeight;
+    snapshotTrack.style.transition = "";
+  }
+
+  function finishSnapshotMove() {
+    if (!isMoving) return;
+    window.clearTimeout(moveTimer);
+    if (moveDirection === "next") {
+      const firstCard = snapshotTrack.firstElementChild;
+      if (firstCard) snapshotTrack.append(firstCard);
     }
+    setSnapshotPositionInstantly(0);
+    isMoving = false;
+    moveDirection = null;
+  }
+
+  function queueSnapshotFallback() {
+    window.clearTimeout(moveTimer);
+    moveTimer = window.setTimeout(finishSnapshotMove, 340);
   }
 
   snapshotPrev.addEventListener("click", () => {
-    index -= 1;
-    updateSnapshotPosition();
+    if (isMoving) return;
+    const lastCard = snapshotTrack.lastElementChild;
+    if (!lastCard) return;
+    isMoving = true;
+    moveDirection = "previous";
+    snapshotTrack.prepend(lastCard);
+    setSnapshotPositionInstantly(-getSnapshotStep());
+    window.requestAnimationFrame(() => window.requestAnimationFrame(() => setSnapshotPosition(0)));
+    queueSnapshotFallback();
   });
 
   snapshotNext.addEventListener("click", () => {
-    index += 1;
-    updateSnapshotPosition();
+    if (isMoving) return;
+    isMoving = true;
+    moveDirection = "next";
+    setSnapshotPosition(-getSnapshotStep());
+    queueSnapshotFallback();
   });
 
-  snapshotTrack.addEventListener("transitionend", () => {
-    if (index >= originalCount * 2 || index < originalCount) {
-      index = ((((index - originalCount) % originalCount) + originalCount) % originalCount) + originalCount;
-      updateSnapshotPosition(false);
-    }
+  snapshotTrack.addEventListener("transitionend", (event) => {
+    if (event.propertyName !== "transform") return;
+    finishSnapshotMove();
   });
 
-  window.addEventListener("resize", () => updateSnapshotPosition(false));
-  updateSnapshotPosition(false);
+  window.addEventListener("resize", () => setSnapshotPositionInstantly(0));
 }
 
 setupSnapshotCarousel();

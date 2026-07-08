@@ -385,26 +385,44 @@ footer p {
   transform: translateY(-50%);
 }
 
-.snapshot-nav::before {
+.snapshot-nav::before,
+.snapshot-nav::after {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   width: 24px;
   height: 32px;
-  background: rgba(247, 251, 255, 0.98);
   border-radius: 9px;
+}
+
+.snapshot-nav::before {
+  z-index: 1;
+  background: rgba(247, 251, 255, 0.98);
   filter:
-    drop-shadow(0 0 20px rgba(247, 251, 255, 0.3))
+    drop-shadow(0 0 8px rgba(247, 251, 255, 0.3))
+    drop-shadow(0 0 18px rgba(247, 251, 255, 0.3))
+    drop-shadow(0 0 30px rgba(247, 251, 255, 0.18))
     drop-shadow(0 8px 14px rgba(0, 0, 0, 0.2));
+}
+
+.snapshot-nav::after {
+  z-index: 0;
+  background: rgba(247, 251, 255, 0.3);
+  filter: blur(9px);
+  transform: translate(-50%, -50%) scale(1.35);
 }
 
 .snapshot-nav.previous {
   left: -59px;
 }
 
-.snapshot-nav.previous::before {
+.snapshot-nav.previous::before,
+.snapshot-nav.previous::after {
   clip-path: polygon(12% 50%, 92% 8%, 92% 92%);
+}
+
+.snapshot-nav.previous::before {
   transform: translate(-50%, -50%);
 }
 
@@ -412,8 +430,12 @@ footer p {
   right: -59px;
 }
 
-.snapshot-nav.next::before {
+.snapshot-nav.next::before,
+.snapshot-nav.next::after {
   clip-path: polygon(88% 50%, 8% 8%, 8% 92%);
+}
+
+.snapshot-nav.next::before {
   transform: translate(-50%, -50%);
 }
 
@@ -426,7 +448,8 @@ footer p {
 .snapshot-nav:focus-visible::before {
   background: #ffffff;
   filter:
-    drop-shadow(0 0 24px rgba(247, 251, 255, 0.42))
+    drop-shadow(0 0 10px rgba(247, 251, 255, 0.3))
+    drop-shadow(0 0 24px rgba(247, 251, 255, 0.3))
     drop-shadow(0 10px 18px rgba(157, 245, 213, 0.16));
 }
 
@@ -1164,7 +1187,8 @@ footer {
     height: 34px;
   }
 
-  .snapshot-nav::before {
+  .snapshot-nav::before,
+  .snapshot-nav::after {
     width: 20px;
     height: 28px;
   }
