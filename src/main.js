@@ -204,9 +204,9 @@ const resumeData = {
   skillEvidence: [
     {
       label: "C / systems C",
-      aliases: ["c", "c language", "systems c", "low level c"],
+      aliases: ["c", "c language", "systems c", "low level c", "c/linux", "c linux", "linux c", "systems programming"],
       answer:
-        "Yes. Haley has strong C evidence: the concurrent C/Linux text editor, the 100-mark Multi-Level Queue Dispatcher, the 92-mark OS Synchronisation Simulation, and an Audio Editor Backend using manual memory management and copy-on-write semantics."
+        "Haley has strong C evidence: the concurrent C/Linux text editor, the 100-mark Multi-Level Queue Dispatcher, the 92-mark OS Synchronisation Simulation, and an Audio Editor Backend using manual memory management and copy-on-write semantics."
     },
     {
       label: "C++",
@@ -218,85 +218,85 @@ const resumeData = {
       label: "Java",
       aliases: ["java", "junit", "gradle"],
       answer:
-        "Yes. Haley used Java, Gradle, JUnit, and JSON in the 100-mark Virtual Scroll Access System, where she was developer and Scrum Master and built core workflows with service-layer logic and validation."
+        "Haley used Java, Gradle, JUnit, and JSON in the 100-mark Virtual Scroll Access System, where she was developer and Scrum Master and built core workflows with service-layer logic and validation."
     },
     {
       label: "Python",
       aliases: ["python", "py"],
       answer:
-        "Yes. Haley used Python for ML Classifiers on Health Data and the 100-mark Connect-4 Minimax AI, including model evaluation, decision trees, Naive Bayes, minimax, alpha-beta pruning, and heuristic search."
+        "Haley used Python for ML Classifiers on Health Data and the 100-mark Connect-4 Minimax AI, including model evaluation, decision trees, Naive Bayes, minimax, alpha-beta pruning, and heuristic search."
     },
     {
       label: "JavaScript / React",
-      aliases: ["javascript", "js", "react", "vite", "frontend", "front end"],
+      aliases: ["javascript", "js", "react", "vite", "frontend", "front end", "react dashboard", "react dashboards", "dashboard", "dashboards"],
       answer:
-        "Yes. Haley used JavaScript, React, and Vite in FrensChatApp and FloodGuard. FrensChatApp is a MERN communication platform, and FloodGuard is a React/Vite/Recharts dashboard."
+        "Haley used JavaScript, React, and Vite in FrensChatApp and FloodGuard. FrensChatApp is a MERN communication platform, and FloodGuard is a React/Vite/Recharts dashboard."
     },
     {
       label: "Node.js / Express / REST APIs",
-      aliases: ["node", "nodejs", "node.js", "express", "rest", "rest api", "rest apis", "api", "apis", "backend api"],
+      aliases: ["node", "nodejs", "node.js", "express", "rest", "rest api", "rest apis", "api", "apis", "backend api", "backend apis", "node api", "node apis"],
       answer:
-        "Yes. Haley used Node.js and Express in FrensChatApp, building REST APIs for authentication, session restore, user lookup, chat history retrieval, and message storage."
+        "Haley used Node.js and Express in FrensChatApp, building REST APIs for authentication, session restore, user lookup, chat history retrieval, and message storage."
     },
     {
       label: "MongoDB / Mongoose",
       aliases: ["mongodb", "mongo", "mongoose", "database", "db"],
       answer:
-        "Yes. Haley used MongoDB/Mongoose in FrensChatApp for persistent user, conversation, and message models."
+        "Haley used MongoDB/Mongoose in FrensChatApp for persistent user, conversation, and message models."
     },
     {
       label: "Socket.IO / real-time messaging",
-      aliases: ["socket", "socket.io", "socketio", "real time", "real-time", "websocket", "websockets", "live messaging"],
+      aliases: ["socket", "socket.io", "socketio", "real time", "real-time", "realtime", "websocket", "websockets", "live messaging", "real-time messaging", "real time messaging"],
       answer:
-        "Yes. Haley implemented Socket.IO real-time messaging in FrensChatApp, including online presence, typing indicators, unread counts, and instant updates across active sessions."
+        "Haley implemented Socket.IO real-time messaging in FrensChatApp, including online presence, typing indicators, unread counts, and instant updates across active sessions."
     },
     {
       label: "JWT / authentication",
       aliases: ["jwt", "auth", "authentication", "login", "session", "sessions", "protected routes"],
       answer:
-        "Yes. Haley built JWT-authenticated sessions and protected routes in FrensChatApp, with APIs for authentication, session restore, user lookup, chat history retrieval, and message storage."
+        "Haley built JWT-authenticated sessions and protected routes in FrensChatApp, with APIs for authentication, session restore, user lookup, chat history retrieval, and message storage."
     },
     {
       label: "Linux / Unix",
-      aliases: ["linux", "unix", "posix"],
+      aliases: ["linux", "unix", "posix", "c/linux", "c linux"],
       answer:
-        "Yes. Haley's strongest Linux/Unix evidence is the concurrent client-server text editor in C, using POSIX threads, signals, FIFOs, and role-based shared-state control."
+        "Haley's strongest Linux/Unix evidence is the concurrent client-server text editor in C, using POSIX threads, signals, FIFOs, and role-based shared-state control."
     },
     {
       label: "Concurrency / pthreads / IPC",
-      aliases: ["concurrency", "parallel", "threads", "threading", "pthreads", "mutex", "mutexes", "condition variables", "ipc", "fifo", "fifos", "signals", "synchronisation", "synchronization"],
+      aliases: ["concurrency", "parallel", "threads", "threading", "pthreads", "mutex", "mutexes", "condition variables", "ipc", "fifo", "fifos", "signals", "synchronisation", "synchronization", "c/linux concurrency", "linux concurrency"],
       answer:
-        "Yes. Haley has deep concurrency evidence: pthread session handling, mutexes, condition variables, FIFO IPC, signal handshakes, optimistic concurrency control, OS scheduling, and strict synchronisation simulations."
+        "Haley has deep concurrency evidence: pthread session handling, mutexes, condition variables, FIFO IPC, signal handshakes, optimistic concurrency control, OS scheduling, and strict synchronisation simulations."
     },
     {
       label: "Docker / Jenkins / CI/CD",
       aliases: ["docker", "jenkins", "ci", "cd", "ci/cd", "cicd", "jacoco", "pipeline", "coverage"],
       answer:
-        "Yes. Haley used Jenkins, Docker, and JaCoCo in the 100-mark Virtual Scroll Access System, maintaining automated builds, integration checks, and more than 75% code coverage."
+        "Haley used Jenkins, Docker, and JaCoCo in the 100-mark Virtual Scroll Access System, maintaining automated builds, integration checks, and more than 75% code coverage."
     },
     {
       label: "Git / GitHub",
       aliases: ["git", "github", "version control", "code review", "branch", "branches"],
       answer:
-        "Yes. Haley used Git/GitHub across her projects. In the Virtual Scroll Access System, she coordinated branch-based development, code reviews, and team integration as Scrum Master."
+        "Haley used Git/GitHub across her projects. In the Virtual Scroll Access System, she coordinated branch-based development, code reviews, and team integration as Scrum Master."
     },
     {
       label: "Agile / Scrum / teamwork",
       aliases: ["agile", "scrum", "scrum master", "teamwork", "collaboration", "leadership", "jira"],
       answer:
-        "Yes. Haley was developer and Scrum Master for a team of 4 on the 100-mark Virtual Scroll Access System, coordinating sprint planning, tasks, code reviews, Git workflows, and weekly client demos."
+        "Haley was developer and Scrum Master for a team of 4 on the 100-mark Virtual Scroll Access System, coordinating sprint planning, tasks, code reviews, Git workflows, and weekly client demos."
     },
     {
       label: "Machine learning / AI",
-      aliases: ["ml", "machine learning", "ai", "classification", "classifier", "classifiers", "decision tree", "decision trees", "naive bayes", "weka", "minimax", "alpha beta", "alpha-beta"],
+      aliases: ["ml", "machine learning", "ai", "classification", "classifier", "classifiers", "decision tree", "decision trees", "naive bayes", "weka", "minimax", "alpha beta", "alpha-beta", "ai/ml", "ai ml", "model evaluation", "ml evaluation", "evaluated ml"],
       answer:
-        "Yes. Haley built High Distinction ML classifiers on health data using preprocessing, Naive Bayes, Decision Trees, stratified k-fold evaluation, Weka benchmarking, and error analysis. She also earned 100 for a Connect-4 minimax/alpha-beta AI."
+        "Haley built High Distinction ML classifiers on health data using preprocessing, Naive Bayes, Decision Trees, stratified k-fold evaluation, Weka benchmarking, and error analysis. She also earned 100 for a Connect-4 minimax/alpha-beta AI."
     },
     {
       label: "R / statistics / regression",
       aliases: ["r", "rstudio", "statistics", "regression", "cross validation", "cross-validation", "data analytics", "body fat"],
       answer:
-        "Yes. Haley used R for a High Distinction regression project predicting body fat percentage from 252 subjects, with model selection, assumption validation, and 10-fold cross-validation."
+        "Haley used R for a High Distinction regression project predicting body fat percentage from 252 subjects, with model selection, assumption validation, and 10-fold cross-validation."
     },
     {
       label: "SQL",
@@ -306,9 +306,9 @@ const resumeData = {
     },
     {
       label: "Testing / debugging",
-      aliases: ["testing", "tests", "debugging", "validation", "asan", "memory checking", "stress testing", "quality assurance", "qa"],
+      aliases: ["testing", "tests", "debugging", "validation", "asan", "memory checking", "stress testing", "quality assurance", "qa", "ci testing", "testing ci", "testing and ci/cd"],
       answer:
-        "Yes. Haley's evidence includes ASan memory checking and concurrency stress testing in C, JUnit/JaCoCo coverage in Java, validation/error handling in backend work, and systematic debugging around race conditions and correctness."
+        "Haley's testing evidence includes ASan memory checking and concurrency stress testing in C, JUnit/JaCoCo coverage in Java, validation/error handling in backend work, and systematic debugging around race conditions and correctness."
     }
   ]
 };
@@ -324,18 +324,18 @@ const fallback =
 
 const recruiterQuestionAnswer =
   [
-    "Recruiters usually want quick proof for:",
-    "1. Best backend/systems project",
-    "2. Personal contribution vs team coordination",
-    "3. C/Linux, concurrency, IPC, and debugging evidence",
-    "4. APIs, auth, databases, and real-time features",
-    "5. Evaluated AI/ML work beyond coursework",
-    "6. Testing, CI/CD, and code-quality practices",
-    "7. Best-fit role: backend, systems, full-stack, or AI/data",
-    "8. Which resume to use for the role",
-    "9. Graduation date and contact details",
+    "Good recruiter-style prompts for this profile:",
+    "1. Backend and systems experience",
+    "2. C/Linux concurrency and IPC",
+    "3. Node.js, React, and API experience",
+    "4. Real-time messaging and Socket.IO",
+    "5. Authentication and database work",
+    "6. AI and data project evidence",
+    "7. Testing, debugging, and CI/CD",
+    "8. Team delivery and Scrum Master experience",
+    "9. Best projects for a backend, full-stack, or AI/data role",
     "",
-    "Ask any of those directly and I will answer from Haley's resume-backed project data."
+    "Ask any topic directly and I will answer from Haley's resume-backed project data."
   ].join("\n");
 
 function list(items) {
