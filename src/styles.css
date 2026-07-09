@@ -225,7 +225,7 @@ h3 {
 
 .hero-text {
   max-width: 680px;
-  color: var(--soft);
+  color: rgba(247, 251, 255, 0.79);
   font-size: clamp(1rem, 2vw, 1.18rem);
 }
 
