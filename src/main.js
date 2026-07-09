@@ -13,13 +13,18 @@ const resumeData = {
   },
   resumes: [
     {
-      label: "Software engineering / backend resume",
+      label: "Backend resume",
       path: "/resumes/HaleyTran_Backend-1-page.pdf",
       focus: "backend systems, concurrency, Java delivery, MERN APIs, OS projects, and systems coursework"
     },
     {
+      label: "Full Stack resume",
+      path: "/resumes/HaleyTran_Full-stack-1-page.pdf",
+      focus: "React, Node/Express, MongoDB, Socket.IO, JWT authentication, APIs, product delivery, and full-stack project work"
+    },
+    {
       label: "AI / ML resume",
-      path: "/resumes/SWE_HaleyTran_ML-AI.pdf",
+      path: "/resumes/HaleyTran_intern-AI-ML-1-page.pdf",
       focus: "applied AI, ML classifiers, regression, evaluation, coursework, and software engineering work samples"
     }
   ],
