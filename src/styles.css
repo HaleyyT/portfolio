@@ -237,6 +237,27 @@ h3 {
   margin-top: 28px;
 }
 
+.resume-actions {
+  display: flex;
+  flex: 1 0 100%;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (min-width: 860px) {
+  .profile-contact-actions {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .profile-contact-actions .resume-actions {
+    grid-column: 1 / -1;
+    flex-wrap: nowrap;
+  }
+}
+
 .button,
 .chat-form button,
 .prompt-chips button {
