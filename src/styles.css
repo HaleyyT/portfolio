@@ -13,6 +13,10 @@
   --cyan: #9bdcff;
   --rose: #f0a9c7;
   --shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+  --headline-yellow: #fafbb4;
+  --headline-turquoise: #b9f6ec;
+  --headline-blue: #a4c0f9;
+  --headline-white: #FFFFFF;
 }
 
 * {
@@ -215,6 +219,16 @@ h1 {
 
 .hero h1 {
   font-size: clamp(2.256rem, 4.992vw, 4.8rem);
+  background: linear-gradient(
+    240deg,
+    var(--headline-yellow) 0%,
+    var(--headline-white) 50%,
+    var(--headline-blue) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 10px 30px rgba(185, 215, 255, 0.08);
 }
 
 h2 {
