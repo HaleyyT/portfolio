@@ -219,6 +219,7 @@ h1 {
 
 .hero h1 {
   font-size: clamp(2.256rem, 4.992vw, 4.8rem);
+  padding-bottom: 0.07em;
   background: linear-gradient(
     240deg,
     var(--headline-yellow) 0%,
@@ -252,7 +253,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 28px;
+  margin-top: 20px;
 }
 
 .resume-actions {
