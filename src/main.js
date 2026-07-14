@@ -727,4 +727,74 @@ function setupSnapshotCarousel() {
   window.addEventListener("resize", () => setSnapshotPositionInstantly(0));
 }
 
+function setupMotion() {
+  const revealSelectors = [
+    ".hero-copy",
+    ".hero-panel",
+    ".projects-hero-copy",
+    ".project-proof-panel",
+    ".intro-grid > *",
+    ".section-heading",
+    ".technical-depth-strip",
+    ".project-card",
+    ".project-case",
+    ".detail-project-grid article",
+    ".skills-grid article",
+    ".chat-section > *",
+    ".contact-section > *"
+  ];
+  const revealTargets = document.querySelectorAll(revealSelectors.join(", "));
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  revealTargets.forEach((element, index) => {
+    element.dataset.reveal = "";
+    element.style.setProperty("--reveal-delay", `${Math.min(index * 55, 440)}ms`);
+  });
+
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    revealTargets.forEach((element) => element.classList.add("is-visible"));
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.08 }
+    );
+
+    revealTargets.forEach((element) => revealObserver.observe(element));
+  }
+
+  const canUsePointerGlow = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (!canUsePointerGlow) return;
+
+  let pointerFrame = 0;
+  let pointerGlowTimer = 0;
+
+  window.addEventListener(
+    "pointermove",
+    (event) => {
+      const { clientX, clientY } = event;
+      if (!pointerFrame) {
+        pointerFrame = window.requestAnimationFrame(() => {
+          document.documentElement.style.setProperty("--pointer-x", `${clientX}px`);
+          document.documentElement.style.setProperty("--pointer-y", `${clientY}px`);
+          pointerFrame = 0;
+        });
+      }
+
+      document.body.classList.add("has-pointer-glow");
+      window.clearTimeout(pointerGlowTimer);
+      pointerGlowTimer = window.setTimeout(() => {
+        document.body.classList.remove("has-pointer-glow");
+      }, 900);
+    },
+    { passive: true }
+  );
+}
+
+setupMotion();
 setupSnapshotCarousel();
